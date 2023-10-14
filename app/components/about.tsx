@@ -60,11 +60,11 @@ const About = () => {
               width="24"
               height="24"
               viewBox="0 0 24 24"
-              stroke-width="2"
+              strokeWidth="2"
               stroke="currentColor"
               fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               onClick={prevSlide}
             >
               <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -78,11 +78,11 @@ const About = () => {
               width="24"
               height="24"
               viewBox="0 0 24 24"
-              stroke-width="2"
+              strokeWidth="2"
               stroke="currentColor"
               fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               onClick={nextSlide}
             >
               <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -102,16 +102,16 @@ const About = () => {
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
-                  stroke-width="2"
+                  strokeWidth="2"
                   stroke={slideIndex === currentIndex ? "#50C878" : "#000"}
                   fill={slideIndex === currentIndex ? "#50C878" : "#000"}
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <path
                     d="M12 7a5 5 0 1 1 -4.995 5.217l-.005 -.217l.005 -.217a5 5 0 0 1 4.995 -4.783z"
-                    stroke-width="0"
+                    strokeWidth="0"
                     fill={slideIndex === currentIndex ? "#50C878" : "#000"}
                   ></path>
                 </svg>
