@@ -11,7 +11,7 @@ const Navbar = () => {
   const [isNavbarColored, setIsNavbarColored] = useState(false);
 
   function scrollHandler() {
-    if (window.scrollY >= 20) {
+    if (window?.scrollY >= 20) {
       setIsNavbarColored(true);
     } else {
       setIsNavbarColored(false);
@@ -19,9 +19,9 @@ const Navbar = () => {
   }
 
   useEffect(() => {
-    window.addEventListener("scroll", scrollHandler);
+    window?.addEventListener("scroll", scrollHandler);
     return () => {
-      window.removeEventListener("scroll", scrollHandler);
+      window?.removeEventListener("scroll", scrollHandler);
     };
   }, []);
 
@@ -33,7 +33,7 @@ const Navbar = () => {
             className="my-4 py-4 border-b border-slate-800 hover:bg-slate-800 hover:rounded cursor-pointer"
             onClick={() => {
               setClick(false);
-              if (window.location.pathname === "/")
+              if (window?.location.pathname === "/")
                 document
                   ?.getElementById("hero")
                   ?.scrollIntoView({ behavior: "smooth" });
@@ -46,7 +46,7 @@ const Navbar = () => {
             className="my-4 py-4 border-b border-slate-800 hover:bg-slate-800 hover:rounded cursor-pointer"
             onClick={() => {
               setClick(false);
-              if (window.location.pathname === "/")
+              if (window?.location.pathname === "/")
                 document
                   ?.getElementById("about")
                   ?.scrollIntoView({ behavior: "smooth" });
@@ -59,7 +59,7 @@ const Navbar = () => {
             className="my-4 py-4 border-b border-slate-800 hover:bg-slate-800 hover:rounded cursor-pointer"
             onClick={() => {
               setClick(false);
-              if (window.location.pathname === "/")
+              if (window?.location.pathname === "/")
                 document
                   ?.getElementById("features")
                   ?.scrollIntoView({ behavior: "smooth" });
@@ -72,7 +72,7 @@ const Navbar = () => {
             className="my-4 py-4 border-b border-slate-800 hover:bg-slate-800 hover:rounded cursor-pointer"
             onClick={() => {
               setClick(false);
-              if (window.location.pathname === "/")
+              if (window?.location.pathname === "/")
                 document
                   ?.getElementById("testimonials")
                   ?.scrollIntoView({ behavior: "smooth" });
@@ -94,7 +94,7 @@ const Navbar = () => {
             className="my-4 py-4 border-b border-slate-800 hover:bg-slate-800 hover:rounded cursor-pointer"
             onClick={() => {
               setClick(false);
-              if (window.location.pathname === "/")
+              if (window?.location.pathname === "/")
                 document
                   ?.getElementById("contact")
                   ?.scrollIntoView({ behavior: "smooth" });
@@ -115,7 +115,7 @@ const Navbar = () => {
       isNavbarColored
         ? "bg-[rgb(0,0,0,0.3)] transition-all duration-300 ease-out shadow-md backdrop-blur-lg"
         : `${
-            window.location.pathname === "/"
+            window?.location.pathname === "/"
               ? "bg-transparent"
               : "bg-[rgb(0,0,0,0.3)]"
           }`
@@ -138,7 +138,7 @@ const Navbar = () => {
               <li
                 className="text-white hover:text-emerald-500 hover:border-b-2 hover:border-emerald-500 transition-all cursor-pointer"
                 onClick={() => {
-                  if (window.location.pathname === "/")
+                  if (window?.location.pathname === "/")
                     document
                       ?.getElementById("hero")
                       ?.scrollIntoView({ behavior: "smooth" });
@@ -150,7 +150,7 @@ const Navbar = () => {
               <li
                 className="text-white hover:text-emerald-500 hover:border-b-2 hover:border-emerald-500 transition-all cursor-pointer"
                 onClick={() => {
-                  if (window.location.pathname === "/")
+                  if (window?.location.pathname === "/")
                     document
                       ?.getElementById("about")
                       ?.scrollIntoView({ behavior: "smooth" });
@@ -162,7 +162,7 @@ const Navbar = () => {
               <li
                 className="text-white hover:text-emerald-500 hover:border-b-2 hover:border-emerald-500 transition-all cursor-pointer"
                 onClick={() => {
-                  if (window.location.pathname === "/")
+                  if (window?.location.pathname === "/")
                     document
                       ?.getElementById("features")
                       ?.scrollIntoView({ behavior: "smooth" });
@@ -174,7 +174,7 @@ const Navbar = () => {
               <li
                 className="text-white hover:text-emerald-500 hover:border-b-2 hover:border-emerald-500 transition-all cursor-pointer"
                 onClick={() => {
-                  if (window.location.pathname === "/")
+                  if (window?.location.pathname === "/")
                     document
                       ?.getElementById("testimonials")
                       ?.scrollIntoView({ behavior: "smooth" });
@@ -194,7 +194,7 @@ const Navbar = () => {
               <li
                 className="text-white hover:text-emerald-500 hover:border-b-2 hover:border-emerald-500 transition-all cursor-pointer"
                 onClick={() => {
-                  if (window.location.pathname === "/")
+                  if (window?.location.pathname === "/")
                     document
                       ?.getElementById("contact")
                       ?.scrollIntoView({ behavior: "smooth" });
