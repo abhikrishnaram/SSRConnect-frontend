@@ -33,22 +33,29 @@ const About = () => {
   };
 
   return (
-    <section className="w-full max-w-6xl mx-auto px-4 py-12" id="about">
-      <div className="md:flex md:items-end md:justify-between">
-        <div className="max-w-xl">
+    <section className="w-full max-w-6xl mx-auto px-4 pt-0" id="about">
+      {/* <div className="md:flex md:items-end md:justify-between">
+        <div className="w-full">
           <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
             About
           </h2>
-          <p className="mt-6 max-w-xl leading-relaxed text-gray-700">
+          <p className="mt-4 w-full leading-relaxed text-gray-700">
             Giving back to the society whatever little we can, this is the small
             thought that led to this massive community service program that we
-            call SSR
+            call SSR (Student Social Responsibility). The aim of this student
+            driven program is nothing but the well-being of the society through
+            various projects. Being able to interact with people and bring about
+            solutions for the various problems in their daily life is something
+            that the students of Amrita have mastered at this young age. The
+            program teaches the students how to be socially responsible as
+            citizens. The main idea, however, is to inspire - inspire the youth
+            to take this up as an example and bring about a change in their own
+            way!
           </p>
         </div>
-      </div>
-
+      </div> */}
       <div>
-        <div className="h-[50vh] md:h-[85vh] w-full m-auto py-16 relative group">
+        <div className="h-[50vh] md:h-[100vh] w-full m-auto py-4 relative group">
           <div
             style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
             className="w-full h-full rounded-xl bg-center bg-cover duration-500"

@@ -7,19 +7,19 @@ const Hero = () => {
   const stats = [
     {
       title: "Years",
-      value: "10",
+      value: "14",
     },
     {
       title: "Projects",
-      value: "994",
+      value: "1035",
     },
     {
       title: "Students",
-      value: "5688",
+      value: "5686",
     },
     {
       title: "Hours",
-      value: "272000",
+      value: "429,896",
     },
   ];
 
@@ -62,7 +62,7 @@ const Hero = () => {
                 </div>
               </a>
               <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
-                <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-white sm:text-4xl md:mx-auto">
+                <h2 className="max-w-lg mb-6 font-sans text-2xl font-bold leading-none tracking-tight text-white sm:text-4xl md:mx-auto">
                   <span className="relative inline-block">
                     <svg
                       viewBox="0 0 52 24"

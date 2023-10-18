@@ -77,21 +77,25 @@ const Navbar = () => {
               setClick(false);
               if (pathName === "/")
                 document
+                  ?.getElementById("projects")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              else router.push("/#projects");
+            }}
+          >
+            Projects
+          </li>
+          <li
+            className="my-4 py-4 border-b border-slate-800 hover:bg-slate-800 hover:rounded cursor-pointer"
+            onClick={() => {
+              setClick(false);
+              if (pathName === "/")
+                document
                   ?.getElementById("testimonials")
                   ?.scrollIntoView({ behavior: "smooth" });
               else router.push("/#testimonials");
             }}
           >
             Testimonials
-          </li>
-          <li
-            className="my-4 py-4 border-b border-slate-800 hover:bg-slate-800 hover:rounded cursor-pointer"
-            onClick={() => {
-              setClick(false);
-              router.push("/blogs");
-            }}
-          >
-            Blogs
           </li>
           <li
             className="my-4 py-4 border-b border-slate-800 hover:bg-slate-800 hover:rounded cursor-pointer"
@@ -190,10 +194,14 @@ const Navbar = () => {
               <li
                 className="text-white hover:border-b-2 hover:border-[#fff] transition-all cursor-pointer"
                 onClick={() => {
-                  router.push("/blogs");
+                  if (pathName === "/")
+                    document
+                      ?.getElementById("projects")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  else router.push("/#projects");
                 }}
               >
-                Blogs
+                Projects
               </li>
             </ul>
           </div>

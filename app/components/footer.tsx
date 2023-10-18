@@ -41,7 +41,7 @@ const Footer = () => {
               {/* youtube */}
               <li>
                 <a
-                  href="/"
+                  href="https://www.youtube.com/@amritassr2462"
                   rel="noreferrer"
                   target="_blank"
                   className="text-[#000] transition hover:text-[#af0c3e]"
