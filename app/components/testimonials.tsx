@@ -5,29 +5,33 @@ const Testimonials = () => {
   const testimonials = [
     {
       title: "Staying Alive",
-      description:
-        "No, Rose, they are not breathing. And they have no arms or legs … Where are they? You know what? If we come across somebody with no arms or legs, do we bother resuscitating them? I mean, what quality of life do we have there?",
-      user: "Michael Scott",
-      role: "Regional Manager",
-      user_img: "",
+      description: `I see this project as a tool to move from selfishness to selflessness to the maximum capacity one can.It is a great feeling to witness the joy that my students feel when they were able to uplift the society through self-initiated projects. Last but not the least, as AMMA has said "Be a Giver not a Taker". This project is a fine example of that.`,
+      user: "Jayakumaran A",
+      role: "SSR Mentor",
+      user_img: "/images/testimonials/jayakumaran-a.webp",
       rating: 5,
     },
     {
       title: "Staying Alive",
       description:
-        "No, Rose, they are not breathing. And they have no arms or legs … Where are they? You know what? If we come across somebody with no arms or legs, do we bother resuscitating them? I mean, what quality of life do we have there?",
-      user: "Michael Scott",
-      role: "Regional Manager",
-      user_img: "",
+        "Student Social Responsibility (SSR) is a credit-based academic program, where we inspire and mentor the youth to run real-time community projects and come up with state-of-the-art solutions in order to address social issues, thereby evolve oneself altruistically and set an example for others to follow",
+      user: "Deepa H",
+      role: "Faculty- L&D (Soft Skills), SSR Mentor",
+      user_img: "/images/testimonials/deepa-h.webp",
       rating: 5,
     },
     {
       title: "Staying Alive",
-      description:
-        "No, Rose, they are not breathing. And they have no arms or legs … Where are they? You know what? If we come across somebody with no arms or legs, do we bother resuscitating them? I mean, what quality of life do we have there?",
-      user: "Michael Scott",
-      role: "Regional Manager",
-      user_img: "",
+      description: `SSR project taps into the goodness that is innate in
+      each one of us, students and mentors! It is a
+      wonderful initiative to translate Amma's message of
+      'Love and Serve' into concrete action that benefits
+      society in a small but meaningful way! It also fosters
+      teamwork and enhances the organizational skills of
+      students, which are valuable assets for their careers.`,
+      user: "Sriram",
+      role: "SSR Mentor",
+      user_img: "/images/testimonials/sriram.webp",
       rating: 5,
     },
   ];
@@ -45,9 +49,9 @@ const Testimonials = () => {
             experience with the program.
           </p>
         </div>
-        <a
+        {/* <a
           href="#"
-          className="mt-6 inline-flex shrink-0 items-center gap-2 rounded-full border border-emerald-600 px-5 py-3 text-emerald-600 transition hover:bg-emerald-600 hover:text-white md:mt-0"
+          className="mt-6 inline-flex shrink-0 items-center gap-2 rounded-full border border-[#af0c3e] px-5 py-3 text-[#af0c3e] transition hover:bg-[#af0c3e] hover:text-white md:mt-0"
         >
           <span className="font-medium"> Read all reviews </span>
 
@@ -65,10 +69,10 @@ const Testimonials = () => {
               d="M14 5l7 7m0 0l-7 7m7-7H3"
             />
           </svg>
-        </a>
+        </a> */}
       </div>
 
-      <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3">
+      <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
         {testimonials.map((testimonial, index) => (
           <blockquote
             className="flex h-full flex-col justify-between bg-white p-6 shadow sm:p-8 hover:shadow-lg transition duration-200 cursor-pointer"
@@ -98,18 +102,18 @@ const Testimonials = () => {
                 </p>
               </div>
             </div>
-
             <footer className="mt-4 text-sm flex items-center font-medium text-gray-700 sm:mt-6">
-              <Image
-                src={
-                  testimonial.user_img ||
-                  "https://as1.ftcdn.net/v2/jpg/03/53/11/00/1000_F_353110097_nbpmfn9iHlxef4EDIhXB1tdTD0lcWhG9.jpg"
-                }
-                alt={testimonial.user}
-                width={35}
-                height={35}
-                className="rounded-full mr-2"
-              />
+              <div className="w-8 h-8 relative rounded-full mr-2">
+                <Image
+                  src={
+                    testimonial.user_img ||
+                    "https://as1.ftcdn.net/v2/jpg/03/53/11/00/1000_F_353110097_nbpmfn9iHlxef4EDIhXB1tdTD0lcWhG9.jpg"
+                  }
+                  alt={testimonial.user}
+                  layout="fill"
+                  className="rounded-full"
+                />
+              </div>
               <div className="flex flex-col items-start justify-start">
                 {testimonial.user}
                 <cite className="block not-italic text-xs text-gray-400">

@@ -97,12 +97,6 @@ const Home = () => {
     },
   ];
 
-  console.log(
-    posts?.map((post: any) => {
-      return moment(post.date).format("YYYY");
-    })
-  );
-
   return (
     <div className="min-h-screen bg-gray-50 py-20">
       <div className="w-full max-w-6xl mx-auto">
@@ -129,7 +123,7 @@ const Home = () => {
                 )
               )?.map((tag: string, index: number) => (
                 <p
-                  className="flex justify-between items-center cursor-pointer text-gray-600 hover:text-emerald-500 mb-2"
+                  className="flex justify-between items-center cursor-pointer text-gray-600 hover:text-[#af0c3e] mb-2"
                   key={index}
                 >
                   <span>{capitalize(tag)}</span>
@@ -150,7 +144,7 @@ const Home = () => {
                 new Set(posts.map((post) => moment(post.date).format("YYYY")))
               ).map((year: string, index: number) => (
                 <p
-                  className="flex justify-between items-center cursor-pointer text-gray-600 hover:text-emerald-500 mb-2"
+                  className="flex justify-between items-center cursor-pointer text-gray-600 hover:text-[#af0c3e] mb-2"
                   key={index}
                 >
                   <span>{year}</span>
@@ -194,7 +188,7 @@ const Home = () => {
                               {tags.map((tag: string) => (
                                 <span
                                   key={tag}
-                                  className="inline-flex items-center px-3 py-0.5 rounded text-sm font-medium leading-5 bg-primary-100 text-emerald-500 bg-slate-200 mr-2 mb-2"
+                                  className="inline-flex items-center px-3 py-0.5 rounded text-sm font-medium leading-5 bg-primary-100 text-[#af0c3e] bg-slate-200 mr-2 mb-2"
                                 >
                                   {capitalize(tag)}
                                 </span>

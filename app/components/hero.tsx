@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
 
@@ -41,9 +43,9 @@ const Hero = () => {
         "
         >
           <div className="max-w-xl sm:mx-auto lg:max-w-2xl">
-            <div className="flex flex-col items-center text-center mb-16 sm:text-center sm:mb-0">
+            <div className="flex flex-col items-center text-center mt-16 lg:mt-0 mb-16 sm:text-center sm:mb-0">
               <a href="/" className="mb-6 sm:mx-auto">
-                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-teal-accent-400">
+                <div className="items-center justify-center w-12 h-12 rounded-full bg-teal-accent-400 hidden lg:block">
                   <svg
                     className="w-10 h-10 text-deep-purple-900"
                     stroke="currentColor"
@@ -93,19 +95,21 @@ const Hero = () => {
                   Be the Change.
                 </p>
               </div>
-              <div>
-                <a
-                  href="/"
-                  className="inline-flex items-center justify-center h-10 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none border-2 border-white hover:border-teal-accent-400"
-                >
-                  More Info
-                </a>
-              </div>
+              <p
+                onClick={() => {
+                  document
+                    ?.getElementById("about")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="cursor-pointer inline-flex items-center justify-center h-10 px-6 mr-6 font-normal tracking-wide text-gray-200 transition duration-200 rounded shadow-md bg-teal-accent-400 hover:bg-[rgb(0,0,0,0.2)] focus:shadow-outline focus:outline-none border border-gray-100 hover:border-teal-accent-400"
+              >
+                More Info
+              </p>
             </div>
           </div>
         </div>
       </div>
-      <div className="w-full bg-emerald-600 flex justify-center">
+      <div className="w-full bg-[#af0c3e] flex justify-center">
         <div className="w-full max-w-6xl px-4 grid grid-cols-2 md:flex md:items-center md:justify-between">
           {stats.map((stat, index) => (
             <div

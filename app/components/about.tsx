@@ -36,7 +36,7 @@ const About = () => {
     <section className="w-full max-w-6xl mx-auto px-4 py-12" id="about">
       <div className="md:flex md:items-end md:justify-between">
         <div className="max-w-xl">
-          <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+          <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
             About
           </h2>
           <p className="mt-6 max-w-xl leading-relaxed text-gray-700">
@@ -103,8 +103,8 @@ const About = () => {
                   height="24"
                   viewBox="0 0 24 24"
                   strokeWidth="2"
-                  stroke={slideIndex === currentIndex ? "#50C878" : "#000"}
-                  fill={slideIndex === currentIndex ? "#50C878" : "#000"}
+                  stroke={slideIndex === currentIndex ? "#af0c3e" : "#000"}
+                  fill={slideIndex === currentIndex ? "#af0c3e" : "#000"}
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 >
@@ -112,7 +112,7 @@ const About = () => {
                   <path
                     d="M12 7a5 5 0 1 1 -4.995 5.217l-.005 -.217l.005 -.217a5 5 0 0 1 4.995 -4.783z"
                     strokeWidth="0"
-                    fill={slideIndex === currentIndex ? "#50C878" : "#000"}
+                    fill={slideIndex === currentIndex ? "#af0c3e" : "#000"}
                   ></path>
                 </svg>
               </div>

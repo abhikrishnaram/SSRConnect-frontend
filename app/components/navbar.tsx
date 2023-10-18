@@ -1,11 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const Navbar = () => {
   const router = useRouter();
+  const pathname = usePathname();
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const [isNavbarColored, setIsNavbarColored] = useState(false);
@@ -21,15 +22,15 @@ const Navbar = () => {
 
   useEffect(() => {
     window?.addEventListener("scroll", scrollHandler);
-    setPathName(window?.location.pathname);
+    setPathName(pathname);
     return () => {
       window?.removeEventListener("scroll", scrollHandler);
     };
-  }, []);
+  }, [pathname]);
 
   const content = (
     <>
-      <div className="lg:hidden block absolute top-0 w-full left-0 right-0 bg-slate-900 transition">
+      <div className="lg:hidden block absolute top-0 w-full left-0 right-0 bg-[#af0c3e] transition">
         <ul className="text-center text-xl sm:px-20 py-5 text-white">
           <li
             className="my-4 py-4 border-b border-slate-800 hover:bg-slate-800 hover:rounded cursor-pointer"
@@ -115,14 +116,19 @@ const Navbar = () => {
       className={`w-full max-w-[100vw] fixed top-0 h-10vh flex justify-between z-50 text-black lg:py-5 px-2 py-4
     ${
       isNavbarColored
-        ? "bg-[rgb(0,0,0,0.3)] transition-all duration-300 ease-out shadow-md backdrop-blur-lg"
-        : `${pathName === "/" ? "bg-transparent" : "bg-[rgb(0,0,0,0.3)]"}`
+        ? "bg-[#af0c3e] transition-all duration-300 ease-out shadow-md backdrop-blur-lg"
+        : `${pathName === "/" ? "bg-transparent" : "bg-[#af0c3e]"}`
     }`}
     >
       <div
         className={`w-full md:mx-auto md:max-w-6xl flex items-center justify-between`}
       >
-        <div className="flex items-center flex-1">
+        <div
+          className="flex items-center flex-1 cursor-pointer"
+          onClick={() => {
+            router.push("/");
+          }}
+        >
           <Image
             src={"/images/amrita-dark.png"}
             alt="Logo"
@@ -134,7 +140,7 @@ const Navbar = () => {
           <div className="flex-10">
             <ul className="flex gap-8 text-[16px]">
               <li
-                className="text-white hover:text-emerald-500 hover:border-b-2 hover:border-emerald-500 transition-all cursor-pointer"
+                className="text-white hover:border-b-2 hover:border-[#fff] transition-all cursor-pointer"
                 onClick={() => {
                   if (pathName === "/")
                     document
@@ -146,7 +152,7 @@ const Navbar = () => {
                 Home
               </li>
               <li
-                className="text-white hover:text-emerald-500 hover:border-b-2 hover:border-emerald-500 transition-all cursor-pointer"
+                className="text-white hover:border-b-2 hover:border-[#fff] transition-all cursor-pointer"
                 onClick={() => {
                   if (pathName === "/")
                     document
@@ -158,7 +164,7 @@ const Navbar = () => {
                 About
               </li>
               <li
-                className="text-white hover:text-emerald-500 hover:border-b-2 hover:border-emerald-500 transition-all cursor-pointer"
+                className="text-white hover:border-b-2 hover:border-[#fff] transition-all cursor-pointer"
                 onClick={() => {
                   if (pathName === "/")
                     document
@@ -170,7 +176,7 @@ const Navbar = () => {
                 Features
               </li>
               <li
-                className="text-white hover:text-emerald-500 hover:border-b-2 hover:border-emerald-500 transition-all cursor-pointer"
+                className="text-white hover:border-b-2 hover:border-[#fff] transition-all cursor-pointer"
                 onClick={() => {
                   if (pathName === "/")
                     document
@@ -182,24 +188,12 @@ const Navbar = () => {
                 Testimonials
               </li>
               <li
-                className="text-white hover:text-emerald-500 hover:border-b-2 hover:border-emerald-500 transition-all cursor-pointer"
+                className="text-white hover:border-b-2 hover:border-[#fff] transition-all cursor-pointer"
                 onClick={() => {
                   router.push("/blogs");
                 }}
               >
                 Blogs
-              </li>
-              <li
-                className="text-white hover:text-emerald-500 hover:border-b-2 hover:border-emerald-500 transition-all cursor-pointer"
-                onClick={() => {
-                  if (pathName === "/")
-                    document
-                      ?.getElementById("contact")
-                      ?.scrollIntoView({ behavior: "smooth" });
-                  else router.push("/#contact");
-                }}
-              >
-                Contact
               </li>
             </ul>
           </div>
