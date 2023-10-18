@@ -120,7 +120,7 @@ const Navbar = () => {
       className={`w-full max-w-[100vw] fixed top-0 h-10vh flex justify-between z-50 text-black lg:py-5 px-2 py-4
     ${
       isNavbarColored
-        ? "bg-[#af0c3e] transition-all duration-300 ease-out shadow-md backdrop-blur-lg"
+        ? "transition-all duration-300 ease-out shadow-md backdrop-blur-lg"
         : `${pathName === "/" ? "bg-transparent" : "bg-[#af0c3e]"}`
     }`}
     >
@@ -138,6 +138,7 @@ const Navbar = () => {
             alt="Logo"
             width={150}
             height={100}
+            className="object-contain"
           />
         </div>
         <div className="lg:flex md:flex lg: flex-1 items center justify-end font-normal hidden bg-transparent">
