@@ -112,7 +112,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="w-full flex flex-col md:flex-row md:items-start md:justify-end">
-            <div className="text-center sm:text-left min-w-[15rem] mb-10 md:mb-0">
+            {/* <div className="text-center sm:text-left min-w-[15rem] mb-10 md:mb-0">
               <p className="text-lg font-medium text-gray-900">Helpful Links</p>
 
               <ul className="mt-8 space-y-4 text-sm">
@@ -142,12 +142,12 @@ const Footer = () => {
                   </a>
                 </li>
               </ul>
-            </div>
+            </div> */}
 
             <div className="text-center sm:text-left">
-              <p className="text-lg font-medium text-gray-900">Contact Us</p>
+              {/* <p className="text-lg font-medium text-gray-900">Contact Us</p> */}
 
-              <ul className="mt-8 space-y-4 text-sm">
+              <ul className="mt-0 space-y-4 text-sm">
                 <li>
                   <a
                     className="flex items-center justify-center gap-1.5"
@@ -174,7 +174,7 @@ const Footer = () => {
                   </a>
                 </li>
 
-                <li>
+                {/* <li>
                   <a
                     className="flex items-center justify-center gap-1.5"
                     href="/"
@@ -196,7 +196,7 @@ const Footer = () => {
 
                     <span className="md:flex-1 text-gray-700">0123456789</span>
                   </a>
-                </li>
+                </li> */}
 
                 <li className="flex items-start justify-center gap-1.5">
                   <svg

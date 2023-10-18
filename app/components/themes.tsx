@@ -29,7 +29,7 @@ const Themes = () => {
       <div className="w-full mt-8 flex flex-wrap gap-4">
         {themes.map((theme: string, index: number) => (
           <div
-            className="flex flex-wrap gap-2 w-max px-8 py-8 bg-white rounded shadow-sm hover:shadow cursor-pointer"
+            className="flex flex-wrap gap-2 w-max px-2 py-2 md:px-8 md:py-8 bg-white rounded shadow-sm hover:shadow cursor-pointer"
             key={index}
           >
             <span className="text-sm text-[#af0c3e] px-0 py-2">{theme}</span>

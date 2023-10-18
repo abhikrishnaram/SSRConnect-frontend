@@ -28,7 +28,7 @@ const ProjectDetails = () => {
         </p>
         {/* divider */}
         <div className="border-b border-gray-300 mt-4"></div>
-        <div className="grid grid-cols-[15rem_1fr] gap-10 py-5">
+        <div className="grid grid-cols-1 md:grid-cols-[15rem_1fr] gap-10 py-5">
           <div>
             <div className="flex flex-col items-start mb-2">
               <p className="text-base text-gray-900 mb-2">Tags</p>
