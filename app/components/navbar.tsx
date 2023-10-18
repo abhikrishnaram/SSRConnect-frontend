@@ -207,7 +207,7 @@ const Navbar = () => {
             </ul>
           </div>
         </div>
-        <div>{click && content}</div>
+        <div className="block md:hidden">{click && content}</div>
 
         <button
           className="block sm:hidden transtion z-50"
