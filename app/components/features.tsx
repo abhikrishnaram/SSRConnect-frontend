@@ -20,7 +20,7 @@ const Features = () => {
     },
   ];
 
-  const data = {
+  const data: { [key: string]: string[] } = {
     Year: [
       "2014",
       "2015",
@@ -120,39 +120,27 @@ wellness. This time aligning the projects with Sustainable Development Program.`
                 <table className="items-center bg-transparent w-full border-collapse ">
                   <thead>
                     <tr>
-                      {
-                        // @ts-ignore
-                        Object.keys(data).map((key, index) => (
-                          <th
-                            key={index}
-                            className="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-gray-100 text-gray-600 border-gray-200"
-                          >
-                            {key}
-                          </th>
-                        ))
-                      }
+                      {Object.keys(data).map((key, index) => (
+                        <th
+                          className="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-gray-100 text-gray-600 border-gray-200"
+                          key={index}
+                        >
+                          {key}
+                        </th>
+                      ))}
                     </tr>
                   </thead>
                   <tbody>
-                    {Object.values(data)[0].map((_, index) => (
-                      <tr key={index} className="hover:bg-gray-100">
-                        {
-                          // @ts-ignore
-                          Object.values(data).map((value, index) => (
-                            <td
-                              key={index}
-                              className={`border-t-0 px-6 align-middle border-l-0 border-r-0 text-black text-xs whitespace-nowrap p-4
-                              ${
-                                index === 0
-                                  ? "font-semibold text-left"
-                                  : "text-center"
-                              }
-                              `}
-                            >
-                              {value[index]}
-                            </td>
-                          ))
-                        }
+                    {data.Year.map((year, index) => (
+                      <tr className="hover:bg-gray-100" key={index}>
+                        {Object.keys(data).map((key) => (
+                          <td
+                            className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-gray-600"
+                            key={key}
+                          >
+                            {data[key][index]}
+                          </td>
+                        ))}
                       </tr>
                     ))}
                   </tbody>

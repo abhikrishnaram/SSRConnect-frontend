@@ -6,6 +6,7 @@ import Footer from "./components/footer";
 import About from "./components/about";
 import Projects from "./components/projects";
 import Mission from "./components/mission";
+import Themes from "./components/themes";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Hero />
       <Mission />
       <About />
+      <Themes />
       <Features />
       <Projects />
       <Testimonials />

@@ -1,10 +1,24 @@
+"use client";
 import { capitalize } from "@/utils/common";
 import { posts } from "@/utils/data";
+import axios from "axios";
 import moment from "moment";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Projects = () => {
+  const [projects, setProjects] = useState<any>([]);
+
+  useEffect(() => {
+    const fetchprojects = async () => {
+      const { data } = await axios.get(
+        "https://ssramritapuri.azurewebsites.net/projects/"
+      );
+      setProjects(data[0]);
+    };
+    fetchprojects();
+  }, []);
+
   return (
     <section className="w-full max-w-6xl mx-auto px-4 pt-20" id="projects">
       <div className="md:flex md:items-end md:justify-between">
@@ -39,33 +53,40 @@ const Projects = () => {
         </a>
       </div>
       <div className="mt-8">
-        {posts.slice(0, 3).map((post: any) => {
-          const { slug, date, title, summary, tags } = post;
+        {projects.slice(0, 3).map((proj: any) => {
+          const { projectId, year, name, description, category } = proj;
           return (
             <li
-              key={slug}
+              key={projectId}
               className="rounded-md my-4 pb-4 bg-white shadow-sm hover:shadow px-4 cursor-pointer"
             >
               <article>
                 <div className="space-y-2 xl:grid grid-cols-1 xl:grid-cols-4 lg:items-baseline lg:space-y-0">
-                  <div className="relative w-full h-full rounded-md overflow-hidden lg:col-span-1">
+                  {/* <div className="relative w-full h-full rounded-md overflow-hidden lg:col-span-1">
                     <Image
                       src={"/images/feature-img-1.webp"}
                       alt="Logo"
                       layout="fill"
                     />
-                  </div>
-                  <div className="space-y-5 lg:col-span-3 px-4">
+                  </div> */}
+                  <div className="space-y-5 lg:col-span-4 px-4">
                     <div>
                       <div>
                         <p className="prose text-base leading-7 text-gray-500 pb-2 m-0">
-                          {moment(date).format("MMMM Do YYYY")}
+                          {year}
                         </p>
-                        <h2 className="text-2xl font-bold leading-8 tracking-tight">
-                          <p className="text-gray-900">{title}</p>
+                        <h2 className="text-2xl font-bold leading-8 tracking-tight text-gray-900">
+                          {name
+                            .split(" ")
+                            .map(
+                              (word: string) =>
+                                word.charAt(0).toUpperCase() +
+                                word.slice(1).toLowerCase()
+                            )
+                            .join(" ")}
                         </h2>
                         <div className="flex flex-wrap mt-2">
-                          {tags.map((tag: string) => (
+                          {category?.split(",")?.map((tag: string) => (
                             <span
                               key={tag}
                               className="inline-flex items-center px-3 py-0.5 rounded text-sm font-medium leading-5 bg-primary-100 text-[#af0c3e] bg-slate-200 mr-2 mb-2"
@@ -76,14 +97,14 @@ const Projects = () => {
                         </div>
                       </div>
                       <div className="prose max-w-none text-gray-500">
-                        {summary}
+                        {description.slice(0, 120)}...
                       </div>
                     </div>
                     <div className="text-base font-medium leading-6">
                       <a
-                        href={`/blog/${slug}`}
+                        href={`/projects/${projectId}`}
                         className="text-gray-500 hover:text-gray-600"
-                        aria-label={`Read "${title}"`}
+                        aria-label={`Read "${name}"`}
                       >
                         Read more &rarr;
                       </a>
