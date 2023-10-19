@@ -176,27 +176,27 @@ const ProjectDetails = () => {
               ))}
             </div>
             <p className="text-base text-gray-900 mt-4 mb-2">Resources</p>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-wrap gap-2">
               {project?.youtubeLink && (
                 <a
                   href={project?.youtubeLink}
                   target="_blank"
-                  className="text-sm text-[#af0c3e] px-0 py-2 underline"
+                  className="text-sm text-white text-center px-2 py-2 bg-[#af0c3e]/100 rounded shadow hover:shadow-lg transition-all duration-300 ease-linear"
                 >
-                  {project?.youtubeLink}
+                  Youtube
                 </a>
               )}
               <a
                 href={`https://ssramritapuri.blob.core.windows.net/data/ppt/${project_id}.pptx`}
                 target="_blank"
-                className="text-sm text-[#af0c3e] px-0 py-2 underline"
+                className="text-sm text-white text-center px-2 py-2 bg-[#af0c3e]/100 rounded shadow hover:shadow-lg transition-all duration-300 ease-linear"
               >
                 Project Presentation
               </a>
               <a
                 href={`https://ssramritapuri.blob.core.windows.net/data/reports/${project_id}.pdf`}
                 target="_blank"
-                className="text-sm text-[#af0c3e] px-0 py-2 underline"
+                className="text-sm text-white text-center px-2 py-2 bg-[#af0c3e]/100 rounded shadow hover:shadow-lg transition-all duration-300 ease-linear"
               >
                 Project Report
               </a>

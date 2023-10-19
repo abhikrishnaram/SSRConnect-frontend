@@ -41,7 +41,11 @@ const Projects = () => {
                   projects
                     ?.flat()
                     ?.map((post: any) =>
-                      post.category.split(",").map((tag: string) => tag)
+                      post.category
+                        .split(",")
+                        .map((tag: string) =>
+                          tag.toLowerCase().replace(/^\s+/, "")
+                        )
                     )
                     ?.flat()
                 )
@@ -50,11 +54,23 @@ const Projects = () => {
                   className="flex justify-between items-center cursor-pointer text-gray-600 hover:text-[#af0c3e] mb-2"
                   key={index}
                 >
-                  <span>{capitalize(tag)}</span>
+                  <span>
+                    {tag
+                      .split(" ")
+                      .map(
+                        (word: string) =>
+                          word.charAt(0).toUpperCase() +
+                          word.slice(1).toLowerCase()
+                      )
+                      .join(" ")}
+                  </span>
                   <span>
                     {
-                      projects[currentPage].filter((post: any) =>
-                        post?.category?.split(",")?.includes(tag)
+                      projects.flat().filter((post: any) =>
+                        post?.category
+                          ?.split(",")
+                          ?.map((tag: string) => tag.toLowerCase())
+                          .includes(tag)
                       ).length
                     }
                   </span>
@@ -74,7 +90,12 @@ const Projects = () => {
                 >
                   <span>{year}</span>
                   <span>
-                    {projects.filter((post: any) => post.year === year).length}
+                    {
+                      projects
+                        ?.flat()
+                        .map((proj: any) => proj.year.toString())
+                        .filter((year: string) => year === year).length
+                    }
                   </span>
                 </p>
               ))}
@@ -122,7 +143,14 @@ const Projects = () => {
                                   key={tag}
                                   className="inline-flex items-center px-3 py-0.5 rounded text-sm font-medium leading-5 bg-primary-100 text-[#af0c3e] bg-slate-200 mr-2 mb-2"
                                 >
-                                  {capitalize(tag)}
+                                  {tag
+                                    .split(" ")
+                                    .map(
+                                      (word: string) =>
+                                        word.charAt(0).toUpperCase() +
+                                        word.slice(1).toLowerCase()
+                                    )
+                                    .join(" ")}
                                 </span>
                               ))}
                             </div>
@@ -159,22 +187,22 @@ const Projects = () => {
                     <path
                       d="M1.1665 4H12.8332"
                       stroke="currentColor"
-                      stroke-width="1.25"
-                      stroke-linecap="round"
+                      strokeWidth="1.25"
+                      strokeLinecap="round"
                       stroke-linejoin="round"
                     />
                     <path
                       d="M1.1665 4L4.49984 7.33333"
                       stroke="currentColor"
-                      stroke-width="1.25"
-                      stroke-linecap="round"
+                      strokeWidth="1.25"
+                      strokeLinecap="round"
                       stroke-linejoin="round"
                     />
                     <path
                       d="M1.1665 4.00002L4.49984 0.666687"
                       stroke="currentColor"
-                      stroke-width="1.25"
-                      stroke-linecap="round"
+                      strokeWidth="1.25"
+                      strokeLinecap="round"
                       stroke-linejoin="round"
                     />
                   </svg>
@@ -212,22 +240,22 @@ const Projects = () => {
                     <path
                       d="M1.1665 4H12.8332"
                       stroke="currentColor"
-                      stroke-width="1.25"
-                      stroke-linecap="round"
+                      strokeWidth="1.25"
+                      strokeLinecap="round"
                       stroke-linejoin="round"
                     />
                     <path
                       d="M9.5 7.33333L12.8333 4"
                       stroke="currentColor"
-                      stroke-width="1.25"
-                      stroke-linecap="round"
+                      strokeWidth="1.25"
+                      strokeLinecap="round"
                       stroke-linejoin="round"
                     />
                     <path
                       d="M9.5 0.666687L12.8333 4.00002"
                       stroke="currentColor"
-                      stroke-width="1.25"
-                      stroke-linecap="round"
+                      strokeWidth="1.25"
+                      strokeLinecap="round"
                       stroke-linejoin="round"
                     />
                   </svg>
