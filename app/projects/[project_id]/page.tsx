@@ -20,6 +20,24 @@ const ProjectDetails = () => {
     fetchProject();
   }, [project_id]);
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const prevSlide = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? project?.img?.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const nextSlide = () => {
+    const isLastSlide = currentIndex === project?.img?.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const goToSlide = (slideIndex: number) => {
+    setCurrentIndex(slideIndex);
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 py-40">
       <div className="w-full max-w-6xl mx-auto px-4 overflow-y-scroll">
@@ -64,6 +82,89 @@ const ProjectDetails = () => {
             <div className="border-b border-gray-300 my-4"></div>
           </div>
           <div className="w-full flex flex-col items-start">
+            {project?.img?.length > 0 && (
+              <div className="h-[30vh] md:h-[70vh] w-full m-auto mb-12 py-4 relative group">
+                <div
+                  style={{
+                    backgroundImage: `url(${project?.img[currentIndex]})`,
+                  }}
+                  className="w-full h-full rounded-xl bg-center bg-cover duration-500"
+                ></div>
+                <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="icon icon-tabler icon-tabler-chevron-left"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    strokeWidth="2"
+                    stroke="currentColor"
+                    fill="none"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    onClick={prevSlide}
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M15 6l-6 6l6 6"></path>
+                  </svg>
+                </div>
+                <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="icon icon-tabler icon-tabler-chevron-right"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    strokeWidth="2"
+                    stroke="currentColor"
+                    fill="none"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    onClick={nextSlide}
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M9 6l6 6l-6 6"></path>
+                  </svg>
+                </div>
+                <div className="flex top-4 justify-center py-2">
+                  {project?.img?.map((_: string, slideIndex: number) => (
+                    <div
+                      key={slideIndex}
+                      onClick={() => goToSlide(slideIndex)}
+                      className="text-2xl cursor-pointer"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="icon icon-tabler icon-tabler-point-filled"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        strokeWidth="2"
+                        stroke={
+                          slideIndex === currentIndex ? "#af0c3e" : "#000"
+                        }
+                        fill={slideIndex === currentIndex ? "#af0c3e" : "#000"}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path
+                          stroke="none"
+                          d="M0 0h24v24H0z"
+                          fill="none"
+                        ></path>
+                        <path
+                          d="M12 7a5 5 0 1 1 -4.995 5.217l-.005 -.217l.005 -.217a5 5 0 0 1 4.995 -4.783z"
+                          strokeWidth="0"
+                          fill={
+                            slideIndex === currentIndex ? "#af0c3e" : "#000"
+                          }
+                        ></path>
+                      </svg>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
             <p className="text-base text-gray-900 mb-4">Description</p>
             <p className="text-sm text-gray-500">{project?.description}</p>
             <p className="text-base text-gray-900 mt-4 mb-2">Team</p>
