@@ -175,6 +175,32 @@ const ProjectDetails = () => {
                 </span>
               ))}
             </div>
+            <p className="text-base text-gray-900 mt-4 mb-2">Resources</p>
+            <div className="flex flex-col gap-2">
+              {project?.youtubeLink && (
+                <a
+                  href={project?.youtubeLink}
+                  target="_blank"
+                  className="text-sm text-[#af0c3e] px-0 py-2 underline"
+                >
+                  {project?.youtubeLink}
+                </a>
+              )}
+              <a
+                href={`https://ssramritapuri.blob.core.windows.net/data/ppt/${project_id}.pptx`}
+                target="_blank"
+                className="text-sm text-[#af0c3e] px-0 py-2 underline"
+              >
+                Project Presentation
+              </a>
+              <a
+                href={`https://ssramritapuri.blob.core.windows.net/data/reports/${project_id}.pdf`}
+                target="_blank"
+                className="text-sm text-[#af0c3e] px-0 py-2 underline"
+              >
+                Project Report
+              </a>
+            </div>
           </div>
         </div>
       </div>
