@@ -14,7 +14,7 @@ const Themes = () => {
   ];
 
   return (
-    <section className="w-full max-w-6xl mx-auto px-4 pt-20" id="testimonials">
+    <section className="w-full max-w-6xl mx-auto px-4 pt-20" id="features">
       <div className="md:flex md:items-end md:justify-between">
         <div className="max-w-xl">
           <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-3xl">

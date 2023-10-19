@@ -10,7 +10,10 @@ const Mission = () => {
   ];
 
   return (
-    <div className="w-screen h-auto md:h-[50vh] border-b border-gray-200">
+    <div
+      className="w-screen h-auto md:h-[50vh] border-b border-gray-200"
+      id="about"
+    >
       <div className="w-full h-full md:max-w-6xl m-auto flex flex-col justify-center items-center py-8 px-4">
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
           Our Mission

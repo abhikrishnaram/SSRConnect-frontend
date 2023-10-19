@@ -4,7 +4,7 @@ import React from "react";
 const Testimonials = () => {
   const testimonials = [
     {
-      title: "Staying Alive",
+      title: "Empowering Change",
       description: `I see this project as a tool to move from selfishness to selflessness to the maximum capacity one can.It is a great feeling to witness the joy that my students feel when they were able to uplift the society through self-initiated projects. Last but not the least, as AMMA has said "Be a Giver not a Taker". This project is a fine example of that.`,
       user: "Jayakumaran A",
       role: "SSR Mentor",
@@ -12,7 +12,7 @@ const Testimonials = () => {
       rating: 5,
     },
     {
-      title: "Staying Alive",
+      title: "Shaping tomorrow",
       description:
         "Student Social Responsibility (SSR) is a credit-based academic program, where we inspire and mentor the youth to run real-time community projects and come up with state-of-the-art solutions in order to address social issues, thereby evolve oneself altruistically and set an example for others to follow",
       user: "Deepa H",
@@ -21,7 +21,7 @@ const Testimonials = () => {
       rating: 5,
     },
     {
-      title: "Staying Alive",
+      title: "Love and Serve",
       description: `SSR project taps into the goodness that is innate in
       each one of us, students and mentors! It is a
       wonderful initiative to translate Amma's message of
