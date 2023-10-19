@@ -120,7 +120,7 @@ const Navbar = () => {
       className={`w-full max-w-[100vw] fixed top-0 h-10vh flex justify-between z-50 text-black lg:py-5 px-2 py-4
     ${
       isNavbarColored
-        ? "transition-all duration-300 ease-out shadow-md backdrop-blur-lg"
+        ? "bg-[#af0c3e] transition-all duration-300 ease-out shadow-md backdrop-blur-lg"
         : `${pathName === "/" ? "bg-transparent" : "bg-[#af0c3e]"}`
     }`}
     >
