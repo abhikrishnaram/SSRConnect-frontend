@@ -1,0 +1,67 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  email     String @unique
+  password  String?
+  createdAt DateTime @default(now())
+  isAdmin   Boolean @default(false)
+  isStaff   Boolean @default(false)
+
+  team      Team?  @relation(fields: [teamId], references: [id])
+  teamId    String? @db.ObjectId
+
+  mentoredTeams Team[] @relation("mentor")
+}
+
+model Team {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+
+  mentor    User?     @relation("mentor", fields: [mentorId], references: [id], onDelete: SetNull)
+  mentorId String @db.ObjectId
+
+  members User[]
+
+  proposals Proposal[]
+
+  project   Project?
+}
+
+model Proposal {
+  id                String @id @default(auto()) @map("_id") @db.ObjectId
+  title             String
+  description       String
+  content           String
+  attachment        String?
+  link              String?
+  created_at        DateTime     @default(now())
+  updated_at        DateTime
+  state             String       @db.Char(2)
+  remarks           String?
+  remark_updated_at DateTime?
+
+  team              Team         @relation(fields: [teamId], references: [id])
+  teamId            String       @db.ObjectId
+}
+
+model Project {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  createdAt DateTime  @default(now())
+
+  team      Team
+
+  proposal  Proposal?
+}

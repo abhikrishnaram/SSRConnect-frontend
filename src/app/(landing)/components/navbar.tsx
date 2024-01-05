@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useRouter, usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import {RegisterLink, LoginLink} from "@kinde-oss/kinde-auth-nextjs/components";
 
 const Navbar = () => {
   const router = useRouter();
@@ -221,6 +222,8 @@ const Navbar = () => {
                           >
                               Portal
                           </Link>
+                          <LoginLink>Sign in</LoginLink>
+                          <RegisterLink>Sign up</RegisterLink>
                       </ul>
                   </div>
               </div>
